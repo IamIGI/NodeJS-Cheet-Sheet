@@ -6,9 +6,10 @@ const fs = require('fs')
 const fsPromises = require('fs').promises;
 const path = require('path');
 
+//LogEvents, create log directory if it not exits, create file eventLog.txt and write logItem data into it
 const logEvents = async (message) => {
     const dateTime = `${format(new Date(), 'yyyyMMdd\tHH:mm:ss')}`;
-    const logItem = `${dateTime}\t${uuid()}\t${message}`;
+    const logItem = `${dateTime}\t${uuid()}\t${message}\n`;
     console.log(logItem);
     try{
         if(!fs.existsSync(path.join(__dirname, 'logs'))) {

@@ -10,7 +10,5 @@ const myEmitter = new MyEmitter();
 //add listener for the log event
 myEmitter.on('log',(msg) => logEvents(msg));
 
-setTimeout( () => {
-    //Emit event
-    myEmitter.emit('log', 'Log event emitted');
-}, 2000);
+//log - event with name "log", and add comment 'Log event emitted'
+myEmitter.emit('log', 'Log event emitted');

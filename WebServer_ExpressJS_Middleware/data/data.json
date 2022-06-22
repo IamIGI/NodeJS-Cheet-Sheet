@@ -1,0 +1,12 @@
+[
+    {
+        "firstname": "Igor",
+        "lastname": "Klusek"
+    },
+    {
+        "learnerdFrom": {
+            "firstname": "Dave",
+            "lastname": "Grey"
+        }
+    }
+]

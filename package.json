@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node server",
-        "dev": "nodemon ./8_WebServer_Routing/server"
+        "dev": "nodemon ./9_WebServer_MVC_REST_API/server"
     },
     "author": "igor",
     "license": "ISC",

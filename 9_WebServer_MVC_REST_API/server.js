@@ -1,0 +1,47 @@
+const express = require('express');
+const app = express();
+const path = require('path');
+const cors = require('cors');
+const corsOptions = require('./config/corsOptions');
+const { logger } = require('./middleware/logEvents');
+const errorHandler = require('./middleware/errorHandler');
+const PORT = process.env.PORT || 3500;
+
+//custom middleware logger
+//log all traffic
+app.use(logger);
+
+app.use(cors(corsOptions));
+
+//built-in middleware to handle urlencoded data
+//in other words, form data: 'content-type: application/x-www-form-urlencoded'
+app.use(express.urlencoded({ extended: false }));
+
+//built in middleware for json
+app.use(express.json());
+
+//serve static files (img, css, txt files)
+app.use('/', express.static(path.join(__dirname, '/public')));
+
+//routes
+app.use('/', require('./routes/root'));
+app.use('/employees', require('./routes/api/employees'));
+
+//* - anything
+app.all('*', (req, res) => {
+    res.status(404); //set 404 status
+    if (req.accepts('html')) {
+        res.sendFile(path.join(__dirname, 'views', '404.html'));
+    } else if (req.accepts('json')) {
+        res.json({ error: '404: not found' });
+    } else {
+        res.type('txt').send('404: not found');
+    }
+});
+
+//handling error, put it on the END of the file
+app.use(errorHandler);
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

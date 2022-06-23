@@ -1,5 +1,7 @@
 run server using "npm run dev", change used package in package.json -> scripts.dev
 
+MVC -> means "Modern View Controller" pattern
+
 ## Useful links:
 
 # Cheatsheet is based on yt tutorial by Dave Grey

@@ -5,11 +5,12 @@
     "main": "server.js",
     "scripts": {
         "start": "node server",
-        "dev": "nodemon ./9_WebServer_MVC_REST_API/server"
+        "dev": "nodemon ./10_WebServer_Authentication/server"
     },
     "author": "igor",
     "license": "ISC",
     "dependencies": {
+        "bcrypt": "^5.0.1",
         "cors": "^2.8.5",
         "date-fns": "^2.28.0",
         "events": "^3.3.0",

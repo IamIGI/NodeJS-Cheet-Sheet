@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node server",
-        "dev": "nodemon ./11_WebServer_JWT_Auth/server"
+        "dev": "nodemon ./12_WebServer_User_Roles_Authorization/server"
     },
     "author": "igor",
     "license": "ISC",

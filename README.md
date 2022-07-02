@@ -12,9 +12,10 @@ FOLDER: '10_WebServer_Authentication'
 3. registerController.js file have async function 'handleNewUser' which check for register data,
    check duplicates, and then hashed password by using bcrypt library.
    We use there 2 times await to make sure that user won't be saved before hashing finish.
-
+4. User roles allow to segregate Users by admin, editor and user
 
 ## IMPORTANT
+
 1. Set expires time for JWT tokens (default 30 s)
 
 ## Useful links:

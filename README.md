@@ -2,7 +2,7 @@ run server using "npm run dev", change used package in package.json -> scripts.d
 
 MVC -> means "Modern View Controller" pattern
 
-# How the user auth works:
+# How the node.js cheatsheet works works:
 
 FOLDER: '10_WebServer_Authentication'
 
@@ -12,6 +12,10 @@ FOLDER: '10_WebServer_Authentication'
 3. registerController.js file have async function 'handleNewUser' which check for register data,
    check duplicates, and then hashed password by using bcrypt library.
    We use there 2 times await to make sure that user won't be saved before hashing finish.
+
+
+## IMPORTANT
+1. Set expires time for JWT tokens (default 30 s)
 
 ## Useful links:
 
@@ -38,3 +42,16 @@ https://www.npmjs.com/package/uuid
 # npm packages:
 
 https://www.npmjs.com
+
+# cookie-oarser
+
+https://www.npmjs.com/package/cookie-parser
+
+# dotenv
+
+https://www.npmjs.com/package/dotenv
+
+# JWT
+
+https://jwt.io/introduction
+https://www.npmjs.com/package/jsonwebtoken

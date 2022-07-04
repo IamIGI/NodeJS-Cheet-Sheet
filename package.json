@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node server",
-        "dev": "nodemon ./14_WebServer_MongoDB_DataModel/server"
+        "dev": "nodemon ./15_WebServer_MongoDB_AsyncCRUD/server"
     },
     "author": "igor",
     "license": "ISC",

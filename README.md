@@ -56,3 +56,7 @@ https://www.npmjs.com/package/dotenv
 
 https://jwt.io/introduction
 https://www.npmjs.com/package/jsonwebtoken
+
+# Mongoose
+
+https://mongoosejs.com/docs/index.html

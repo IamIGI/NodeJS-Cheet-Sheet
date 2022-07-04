@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node server",
-        "dev": "nodemon ./13_WebServer_Intro_to_MongoDB_Mongoose/server"
+        "dev": "nodemon ./14_WebServer_MongoDB_DataModel/server"
     },
     "author": "igor",
     "license": "ISC",

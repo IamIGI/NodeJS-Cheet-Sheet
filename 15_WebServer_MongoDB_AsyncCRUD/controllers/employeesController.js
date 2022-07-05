@@ -2,14 +2,14 @@ const Employee = require('../model/Employee');
 
 const getAllEmployees = async (req, res) => {
     const employees = await Employee.find();
-    if (!employees) return res.status(204).json( {'message': 'No employees found'});
+    if (!employees) return res.status(204).json({ message: 'No employees found' });
     res.json(employees);
 };
 
 const getEmployee = async (req, res) => {
-    if (!req?.params?.id) return res.status(400).json({ 'message': 'Employee ID required'});
+    if (!req?.params?.id) return res.status(400).json({ message: 'Employee ID required' });
 
-    const employee = await Employee.findOne({ _id: req.params.id}).exec();
+    const employee = await Employee.findOne({ _id: req.params.id }).exec();
     if (!employee) {
         return res.status(204).json({ message: `No employee matched ${req.body.id}` });
     }
@@ -18,7 +18,7 @@ const getEmployee = async (req, res) => {
 
 const createNewEmployee = async (req, res) => {
     if (!req?.body?.firstname || !req?.body?.lastname) {
-        return res.status(400).json({'message':'Frist and last name are required'})
+        return res.status(400).json({ message: 'Frist and last name are required' });
     }
 
     try {
@@ -28,17 +28,17 @@ const createNewEmployee = async (req, res) => {
         });
 
         res.status(200).json(result);
-    }catch(err){
+    } catch (err) {
         console.error(err);
     }
 };
 
 const updateEmployee = async (req, res) => {
-    if(!req?.body?.id) {
-        return res.status(400).json({'message': 'ID parameter is required.'});
+    if (!req?.body?.id) {
+        return res.status(400).json({ message: 'ID parameter is required.' });
     }
 
-    const employee = await Employee.findOne({ _id: req.body.id}).exec();
+    const employee = await Employee.findOne({ _id: req.body.id }).exec();
     if (!employee) {
         return res.status(204).json({ message: `No employee matched ${req.body.id}` });
     }
@@ -50,13 +50,13 @@ const updateEmployee = async (req, res) => {
 };
 
 const deleteEmployee = async (req, res) => {
-    if (!req?.body?.id) return res.status(400).json({'message': 'Employee ID required'});
+    if (!req?.body?.id) return res.status(400).json({ message: 'Employee ID required' });
 
-    const employee =  await Employee.findOne({ _id: req.body.id}).exec();
+    const employee = await Employee.findOne({ _id: req.body.id }).exec();
     if (!employee) {
         return res.status(204).json({ message: `No employee matched ${req.body.id}` });
     }
-    const result = await employee.deleteOne({_id: req.body.id});
+    const result = await employee.deleteOne({ _id: req.body.id });
     res.json(result);
 };
 

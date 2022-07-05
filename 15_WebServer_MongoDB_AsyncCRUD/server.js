@@ -52,6 +52,7 @@ app.use('/logout', require('./routes/logout'));
 //AUTH JWT everything beneath
 app.use(verifyJWT); //app.use works like a waterfall, everything beneath will use verifyJWT
 app.use('/employees', require('./routes/api/employees'));
+app.use('/users', require('./routes/api/users'));
 
 //* - anything
 app.all('*', (req, res) => {

@@ -1,11 +1,7 @@
 {
-    "cSpell.words": [
-        "cheatsheet"
-    ]
-} // {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode",
-//     "[javascript]": {
-//         "editor.defaultFormatter": "esbenp.prettier-vscode"
-//     },
-//     "cSpell.words": ["cheatsheet"]
-// }
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.words": ["cheatsheet"]
+}

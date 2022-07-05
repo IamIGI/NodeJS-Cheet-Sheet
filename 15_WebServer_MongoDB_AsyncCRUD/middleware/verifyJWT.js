@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-const path = require('path');
 
 const verifyJWT = (req, res, next) => {
     const authHeader = req.headers.authorization || req.headers.Authorization;

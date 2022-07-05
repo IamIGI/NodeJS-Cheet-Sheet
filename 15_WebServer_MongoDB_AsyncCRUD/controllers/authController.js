@@ -41,7 +41,7 @@ const handleLogin = async (req, res) => {
 
             maxAge: 24 * 50 * 60 * 1000,
         }); //secure: true, //back when in production (chrome )
-        res.json({ accessToken });
+        res.json({ accessToken }); // send via the HTTP HEADERS
     } else {
         res.sendStatus(401);
     }

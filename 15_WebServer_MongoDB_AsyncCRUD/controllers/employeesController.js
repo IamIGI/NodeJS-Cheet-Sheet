@@ -42,6 +42,7 @@ const updateEmployee = async (req, res) => {
     if (!employee) {
         return res.status(204).json({ message: `No employee matched ${req.body.id}` });
     }
+    console.log(firstname, lastname);
     if (req.body?.firstname) employee.firstname = req.body.firstname;
     if (req.body?.lastname) employee.lastname = req.body.lastname;
     const result = await employee.save();

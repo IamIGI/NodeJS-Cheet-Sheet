@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "node server",
-        "dev": "nodemon ./15_WebServer_MongoDB_AsyncCRUD/server"
+        "dev": "nodemon ./Middleware_cheatsheet/server"
     },
     "author": "igor",
     "license": "ISC",

@@ -12,7 +12,7 @@ const handleLogin = async (req, res) => {
     //evaluate password
     const match = await bcrypt.compare(pwd, foundUser.password);
     if (match) {
-        const roles = Object.values(foundUser.roles);
+        const roles = Object.values(foundUser.roles).filter(Boolean);
         // JWT token.
         const accessToken = jwt.sign(
             {
@@ -41,7 +41,7 @@ const handleLogin = async (req, res) => {
 
             maxAge: 24 * 50 * 60 * 1000,
         }); //secure: true, //back when in production (chrome )
-        res.json({ accessToken }); // send via the HTTP HEADERS
+        res.json({ roles, accessToken }); // send via the HTTP HEADERS
     } else {
         res.sendStatus(401);
     }

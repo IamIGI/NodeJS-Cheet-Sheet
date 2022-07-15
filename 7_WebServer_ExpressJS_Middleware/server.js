@@ -12,7 +12,12 @@ app.use(logger);
 
 //cors - Cross Origin Resource Sharing          //localhost declare for React Dev App
 //put there your React Domain
-const whiteList = ['https://www.yoursite.com', 'http://127.0.0.1:5000', 'http://localhost:3500'];
+const whiteList = [
+    'https://www.yoursite.com',
+    'http://127.0.0.1:5000',
+    'http://localhost:3500',
+    'http://localhost:3000',
+];
 const corsOptions = {
     origin: (origin, callback) => {
         // true when domain is in the whiteList, remove !origin after development

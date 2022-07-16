@@ -38,7 +38,7 @@ const handleLogin = async (req, res) => {
         res.cookie('jwt', refreshToken, {
             httpOnly: true,
             sameSite: 'None',
-
+            secure: true,
             maxAge: 24 * 50 * 60 * 1000,
         }); //secure: true, //back when in production (chrome )
         res.json({ roles, accessToken }); // send via the HTTP HEADERS
